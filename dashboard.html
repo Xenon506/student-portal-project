@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Student Interaction Portal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Student Portal</h2>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar" id="userAvatar">JD</div>
+                <div class="user-info">
+                    <h4 id="userName">John Doe</h4>
+                    <span class="user-role" id="userRole">Student</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-item active"><span>📊</span> Dashboard</a></li>
+                    <li><a href="#profile" class="nav-item"><span>👤</span> Profile</a></li>
+                    <li><a href="#forums" class="nav-item"><span>💬</span> Discussion Forums</a></li>
+                    <li><a href="#calendar" class="nav-item"><span>📅</span> Calendar</a></li>
+                    <li><a href="#projects" class="nav-item"><span>📝</span> Projects</a></li>
+                    <li><a href="#documents" class="nav-item"><span>📁</span> Documents</a></li>
+                    <li><a href="#chat" class="nav-item"><span>💭</span> Chat</a></li>
+                    <li><a href="#analytics" class="nav-item"><span>📈</span> Analytics</a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn">🚪 Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="notifications">
+                        <button class="notification-btn">🔔 <span class="badge">3</span></button>
+                        <div class="notification-dropdown">
+                            <h3>Notifications</h3>
+                            <div class="notification-list">
+                                <div class="notification-item">
+                                    <div class="notification-content">
+                                        <p>New assignment posted in CS101</p>
+                                        <small>10 minutes ago</small>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-content">
+                                        <p>Your submission was graded</p>
+                                        <small>1 hour ago</small>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-content">
+                                        <p>New forum reply to your thread</p>
+                                        <small>2 hours ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="content-section active">
+                    <div class="dashboard-welcome">
+                        <h2>Welcome back, <span id="welcomeName">John</span>!</h2>
+                        <p>Here's what's happening in your courses today.</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">📚</div>
+                            <div class="stat-info">
+                                <h3>5</h3>
+                                <p>Active Courses</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green">📝</div>
+                            <div class="stat-info">
+                                <h3>3</h3>
+                                <p>Pending Assignments</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon orange">💬</div>
+                            <div class="stat-info">
+                                <h3>12</h3>
+                                <p>Unread Messages</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon red">📅</div>
+                            <div class="stat-info">
+                                <h3>2</h3>
+                                <p>Upcoming Deadlines</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <h3>Upcoming Events</h3>
+                            <div class="event-list">
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <span class="day">15</span>
+                                        <span class="month">Sep</span>
+                                    </div>
+                                    <div class="event-details">
+                                        <h4>CS101 Assignment Due</h4>
+                                        <p>Introduction to Programming</p>
+                                    </div>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <span class="day">18</span>
+                                        <span class="month">Sep</span>
+                                    </div>
+                                    <div class="event-details">
+                                        <h4>Math Quiz</h4>
+                                        <p>Calculus I</p>
+                                    </div>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <span class="day">22</span>
+                                        <span class="month">Sep</span>
+                                    </div>
+                                    <div class="event-details">
+                                        <h4>Project Submission</h4>
+                                        <p>Software Engineering</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <h3>Recent Activities</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">📝</div>
+                                    <div class="activity-content">
+                                        <p>Submitted <strong>Assignment 2</strong> in CS101</p>
+                                        <small>Yesterday at 4:30 PM</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">💬</div>
+                                    <div class="activity-content">
+                                        <p>Replied to thread in <strong>Math Forum</strong></p>
+                                        <small>Today at 10:15 AM</small>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">📁</div>
+                                    <div class="activity-content">
+                                        <p>Downloaded <strong>Lecture Notes 5</strong></p>
+                                        <small>Today at 11:40 AM</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card full-width">
+                        <h3>Course Overview</h3>
+                        <div class="course-progress">
+                            <div class="progress-item">
+                                <h4>CS101 - Introduction to Programming</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                                <span>75% Complete</span>
+                            </div>
+                            <div class="progress-item">
+                                <h4>MATH201 - Calculus I</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span>60% Complete</span>
+                            </div>
+                            <div class="progress-item">
+                                <h4>ENG101 - Composition</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                                <span>85% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections (Profile, Forums, Calendar, etc.) would go here -->
+                <!-- These would be similar to the previous implementation but with enhanced styling -->
+                
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
