@@ -1,44 +1,27 @@
-// Navigation
-function setupNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
+// Automatic user creation (remove login requirement)
+function createDefaultUser() {
+    const defaultUser = {
+        firstName: 'Demo',
+        lastName: 'User',
+        email: 'demo@university.edu',
+        role: 'student',
+        courses: ['CS101', 'MATH201', 'ENG101'],
+        lastLogin: new Date().toISOString()
+    };
     
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Update active link
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-            
-            // Show corresponding section
-            const targetId = link.getAttribute('href').substring(1);
-            sections.forEach(section => {
-                section.classList.remove('active');
-                if (section.id === targetId) {
-                    section.classList.add('active');
-                    
-                    // Refresh section data when shown
-                    if (targetId === 'forums') {
-                        loadForums();
-                        setupForumSearch();
-                    }
-                    else if (targetId === 'calendar') loadCalendar();
-                    else if (targetId === 'documents') loadDocuments();
-                }
-            });
-        });
-    });
-    
-    // Logout functionality
-    document.getElementById('logout').addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('Logout functionality would be implemented in a real application');
-    });
+    setStorageData('currentUser', defaultUser);
+    return defaultUser;
 }
 
-// Initialize application
+// Initialize application without authentication
 function initApp() {
+    // Create or get current user
+    let user = getStorageData('currentUser');
+    if (!user) {
+        user = createDefaultUser();
+    }
+    
+    // Initialize the rest of the application
     initializeData();
     loadProfile();
     loadForums();
@@ -46,6 +29,11 @@ function initApp() {
     loadCalendar();
     loadDocuments();
     setupNavigation();
+    
+    // Initialize other components if they exist
+    if (typeof loadProjects === 'function') loadProjects();
+    if (typeof initChat === 'function') initChat();
+    if (typeof loadAnalytics === 'function') loadAnalytics();
 }
 
 // Start the application when DOM is loaded
