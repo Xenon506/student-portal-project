@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Interaction Portal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Student Portal</div>
+                <ul class="nav-links">
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#profile" class="nav-link active">Profile</a></li>
+                    <li><a href="#forums" class="nav-link">Discussion Forums</a></li>
+                    <li><a href="#calendar" class="nav-link">Calendar</a></li>
+                    <li><a href="#documents" class="nav-link">Document Repository</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <!-- Profile Section -->
+                <div id="profile" class="section active">
+                    <h2>Profile Management</h2>
+                    <div class="profile-header">
+                        <div class="avatar" id="avatarInitials">JD</div>
+                        <div class="profile-info">
+                            <h3 id="profileName">John Doe</h3>
+                            <p id="profileRole">Student</p>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-success hidden" id="profileAlert">
+                        Profile updated successfully!
+                    </div>
+                    
+                    <form id="profileForm">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select id="role">
+                                <option value="student">Student</option>
+                                <option value="faculty">Faculty</option>
+                                <option value="admin">Admin</option>
+                                <option value="ta">Teaching Assistant</option>
+                            </select>
+                        </div>
+                        <button type="submit">Update Profile</button>
+                    </form>
+                </div>
+
+                <!-- Forums Section -->
+                <div id="forums" class="section">
+                    <h2>Discussion Forums</h2>
+                    
+                    <div class="form-group">
+                        <input type="text" id="searchForums" placeholder="Search forums...">
+                    </div>
+                    
+                    <div id="forumList">
+                        <!-- Forum threads will be added here dynamically -->
+                    </div>
+                    
+                    <h3>Create New Thread</h3>
+                    <form id="threadForm">
+                        <div class="form-group">
+                            <label for="threadTitle">Title</label>
+                            <input type="text" id="threadTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="threadContent">Content</label>
+                            <textarea id="threadContent" rows="4" required></textarea>
+                        </div>
+                        <button type="submit">Create Thread</button>
+                    </form>
+                </div>
+
+                <!-- Calendar Section -->
+                <div id="calendar" class="section">
+                    <h2>Calendar Management</h2>
+                    
+                    <div class="calendar" id="calendarView">
+                        <div class="calendar-header">
+                            <h3>September 2023</h3>
+                        </div>
+                        <div class="calendar-cell day-header">Sun</div>
+                        <div class="calendar-cell day-header">Mon</div>
+                        <div class="calendar-cell day-header">Tue</div>
+                        <div class="calendar-cell day-header">Wed</div>
+                        <div class="calendar-cell day-header">Thu</div>
+                        <div class="calendar-cell day-header">Fri</div>
+                        <div class="calendar-cell day-header">Sat</div>
+                        
+                        <!-- Calendar cells will be populated dynamically -->
+                    </div>
+                    
+                    <h3>Add New Event</h3>
+                    <form id="eventForm">
+                        <div class="form-group">
+                            <label for="eventTitle">Event Title</label>
+                            <input type="text" id="eventTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Date</label>
+                            <input type="date" id="eventDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDescription">Description</label>
+                            <textarea id="eventDescription" rows="3"></textarea>
+                        </div>
+                        <button type="submit">Add Event</button>
+                    </form>
+                </div>
+
+                <!-- Documents Section -->
+                <div id="documents" class="section">
+                    <h2>Document Repository</h2>
+                    
+                    <ul class="document-list" id="documentList">
+                        <!-- Documents will be added here dynamically -->
+                    </ul>
+                    
+                    <h3>Upload New Document</h3>
+                    <form id="documentForm">
+                        <div class="form-group">
+                            <label for="docTitle">Document Title</label>
+                            <input type="text" id="docTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="docCategory">Category</label>
+                            <select id="docCategory">
+                                <option value="lecture">Lecture Notes</option>
+                                <option value="assignment">Assignments</option>
+                                <option value="reference">Reference Materials</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="docFile">File (simulated)</label>
+                            <input type="text" id="docFile" placeholder="File name" required>
+                        </div>
+                        <button type="submit">Upload Document</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/forums.js"></script>
+    <script src="scripts/calendar.js"></script>
+    <script src="scripts/documents.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
